@@ -121,7 +121,6 @@ const handleSubmit = async () => {
         password: password.value,
       });
       if (response && response.token) {
-        // Save token to localStorage or a secure storage
         localStorage.setItem("token", response.token);
         router.push("/");
       } else {

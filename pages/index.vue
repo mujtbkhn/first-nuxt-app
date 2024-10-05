@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Hero -->
     <div class="relative h-screen">
       <div class="absolute inset-0 z-0">
         <img src="@/assets/images/property.jpg" alt="" class="object-cover w-full h-full opacity-70" />
@@ -14,12 +13,10 @@
           <p class="max-w-3xl mx-auto mb-5 text-lg text-center text-gray-600 sm:text-lg">
             Discover your dream home with our real estate services. Whether you are looking to buy, sell or rent, we are here to help.
           </p>
-          <!-- Add your filter component here -->
         </div>
       </div>
     </div>
 
-    <!-- Properties -->
     <div class="container px-4 py-12 mx-auto">
       <h2 class="mb-8 text-3xl font-bold text-center">Find Your Perfect Property</h2>
 
@@ -47,7 +44,7 @@ const loading = ref(true)
 const properties = computed(() => store?.getters?.getProperties)
 
 onMounted(async () => {
-  loading.value = true // Ensure loading state is set before fetching
+  loading.value = true 
   try {
     await store?.dispatch('fetchProperties')
   } catch (err) {

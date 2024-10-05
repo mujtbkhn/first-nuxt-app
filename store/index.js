@@ -17,8 +17,7 @@ export const actions = {
     try {
       const { $api } = useNuxtApp()
       const response = await $api.post('/login', credentials)
-      // Handle successful login (e.g., save token, update state)
-      commit('SET_USER', response.data.user) // Assuming the response includes user data
+      commit('SET_USER', response.data.user)
       return response.data
     } catch (error) {
       // Handle error
@@ -30,11 +29,9 @@ export const actions = {
     try {
       const { $api } = useNuxtApp()
       const response = await $api.post('/signup', userData)
-      // Handle successful signup
-      commit('SET_USER', response.data.user) // Assuming the response includes user data
+      commit('SET_USER', response.data.user)
       return response.data
     } catch (error) {
-      // Handle error
       throw error
     }
   },
